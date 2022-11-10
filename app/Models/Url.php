@@ -10,4 +10,10 @@ class Url extends Model
     use HasFactory;
 
     protected $table = 'urls';
+
+    protected $fillable = [
+        'short',
+        'long',
+        'created_by'
+    ];
 }
