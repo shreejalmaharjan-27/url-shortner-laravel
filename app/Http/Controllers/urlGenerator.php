@@ -19,6 +19,10 @@ class urlGenerator extends Controller
         $request = $r->post();
 
         try {
+
+            // throw an exception when url isn't supplied
+            if (!$request['url'] ?? true) throw new Exception('No URL supplied.');
+
             if (($request['customShortUrl'] ?? false)) {
                 if (!$r->bearerToken() ?? true) {
                     throw new Exception("You need to be logged in to make custom URL");
