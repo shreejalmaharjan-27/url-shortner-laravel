@@ -35,4 +35,6 @@
       <span>Error! Task failed successfully.</span>
     </div>
   </div>
+
+  <input class="input input-error" />
 @endsection
