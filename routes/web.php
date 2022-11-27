@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\redirectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,6 @@ Route::get('/components', function(Request $r) {
 
     return view('elements.interactive');
 });
+
+// pass the url to controller if the urls aren't defined anymore
+Route::fallback([redirectController::class, 'redirect']);
