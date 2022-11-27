@@ -16,6 +16,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "clipboard": "^2.0.11",
         "daisyui": "^2.42.1"
     }
 }
