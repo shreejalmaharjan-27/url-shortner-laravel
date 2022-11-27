@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
+});
+
+/*
+route to get dynamic components which is generated using client side js
+*/
+Route::get('/components', function(Request $r) {
+    // if dev parameter is not passed return 404
+    if(!$r->get('dev') ?? true) return abort(404);
+
+    return view('elements.interactive');
 });
