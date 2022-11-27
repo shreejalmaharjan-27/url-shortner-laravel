@@ -15,7 +15,7 @@
         <div class="form-control p-4 bg-success rounded-lg mt-4 hidden" id="shortened_url_container">
             <label class='label font-bold text-xl'>Your Shortened URL</label>
             <div class="flex flex-col md:flex-row space-y-2 md:space-x-2 md:justify-between md:items-end">
-                <input class="input input-success w-full" id="shortened_url"/>
+                <input class="input input-success w-full" id="shortened_url" readonly/>
                 <button class="btn btn-md btn-secondary copy gap-2" type="button" data-clipboard-target="#shortened_url">
                     <x-far-copy class="h-6 w-6"/>
                     Copy
