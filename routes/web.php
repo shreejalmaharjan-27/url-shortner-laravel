@@ -29,5 +29,16 @@ Route::get('/components', function(Request $r) {
     return view('elements.interactive');
 });
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
 // pass the url to controller if the urls aren't defined anymore
 Route::fallback([redirectController::class, 'redirect']);
