@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-control rounded-lg mt-2 hidden" id="more_options">
-                <input name="text" name="custom_url" class="input input-bordered w-full" placeholder="Custom URL" />
+                <input type="text" name="customShortUrl" class="input input-bordered w-full" placeholder="Custom URL" />
             </div>
 
             <div class="form-control p-4 bg-success rounded-lg mt-4 hidden" id="shortened_url_container">
@@ -77,7 +77,10 @@
             input.classList.remove('input-error');
             let response = fetch(form.action, {
                     method: 'POST',
-                    body: new FormData(form)
+                    body: new FormData(form),
+                    headers: {
+                        "Authorization": "Bearer {{ Session::getId() }}"
+                    }
                 })
                 .then(response => response.json())
                 .then(data => {
